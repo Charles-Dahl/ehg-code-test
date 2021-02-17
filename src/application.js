@@ -1,8 +1,8 @@
 import React from 'react';
-import Pixel from './components/pixel'
+import Image from './components/image'
 
 const Application = () => {
-    return <Pixel redValue={256} greenValue={64} blueValue={128} />
+    return <Image />
 }
 
 export default Application;
