@@ -1,26 +1,26 @@
-import React from "react";
 import styled from "styled-components";
-import Subpixel from "./subpixel";
 
 interface PixelProps {
-	redValue: number;
-	greenValue: number;
-	blueValue: number;
+	red: number;
+	green: number;
+	blue: number;
 }
 
-const StyledPixel = styled.div`
-	display: flex;
-	flex-direction: row;
+const Pixel = styled.div.attrs<PixelProps>(({ red, green, blue }) => ({
+	style: {
+		backgroundColor: `rgb(${red}, ${green}, ${blue})`,
+	},
+}))<PixelProps>`
+	width: 1px;
+	height: 1px;
 `;
 
-const Pixel = ({ redValue, greenValue, blueValue }: PixelProps) => {
-	return (
-		<StyledPixel>
-			<Subpixel color="red" value={redValue} />
-			<Subpixel color="green" value={greenValue} />
-			<Subpixel color="blue" value={blueValue} />
-		</StyledPixel>
-	);
-};
-
 export default Pixel;
+
+// const Component = styled.div.attrs(props => ({
+//     style: {
+//       background: props.background,
+//     },
+//   }))`width: 100%;`
+
+//   <Component />
