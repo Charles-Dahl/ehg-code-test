@@ -1,18 +1,16 @@
 import styled from "styled-components";
 
 interface PixelProps {
-	red: number;
-	green: number;
-	blue: number;
+	color: string;
 }
 
-const Pixel = styled.div.attrs<PixelProps>(({ red, green, blue }) => ({
+const Pixel = styled.div.attrs<PixelProps>(({ color }) => ({
 	style: {
-		backgroundColor: `rgb(${red}, ${green}, ${blue})`,
+		backgroundColor: color,
 	},
 }))<PixelProps>`
-	width: 1px;
-	height: 1px;
+	width: 5px;
+	height: 5px;
 `;
 
 export default Pixel;
