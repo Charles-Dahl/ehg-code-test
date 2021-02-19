@@ -8,7 +8,7 @@ import { chunk } from "lodash";
 
 const ImageGrid = styled.div`
 	display: grid;
-	grid-template-columns: repeat(128, calc(${pixelSize} * 2));
+	grid-template-columns: repeat(64, calc(${pixelSize} * 4));
 `;
 
 interface ImageProps {
@@ -16,18 +16,15 @@ interface ImageProps {
 }
 
 const Image = ({ colors = [] }: ImageProps) => {
-	const pairs = chunk(colors, 2);
+	const colorGroups = chunk(colors, 4);
 	return (
 		<ImageGrid>
-			{pairs.map((colorPair) => {
-				const colorString = `${colorPair[0].string()}${colorPair[1].string()}`;
-				return (
-					<Pixel
-						firstColor={colorPair[0].string()}
-						secondColor={colorPair[1].string()}
-						key={colorString}
-					/>
+			{colorGroups.map((group) => {
+				const colorString = group.reduce(
+					(colorString, color) => `${colorString}${color.string()}`,
+					""
 				);
+				return <Pixel colors={group} key={colorString} />;
 			})}
 		</ImageGrid>
 	);
