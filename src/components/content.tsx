@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
-export default styled.main`
+const Content = styled.main`
 	display: flex;
 	flex-direction: column;
 	grid-area: main;
 	align-items: center;
 	padding: 20px;
 `;
+
+export default Content;

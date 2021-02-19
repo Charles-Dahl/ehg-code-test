@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Title from "./title";
 
-const Header = styled.header`
+const Container = styled.header`
 	background-color: #ebebeb;
 	grid-area: header;
 	display: flex;
@@ -11,10 +11,11 @@ const Header = styled.header`
 	align-items: center;
 `;
 
-export default () => {
+const Header = () => {
 	return (
-		<Header>
+		<Container>
 			<Title>EHG Code Test</Title>
-		</Header>
+		</Container>
 	);
 };
+export default Header;

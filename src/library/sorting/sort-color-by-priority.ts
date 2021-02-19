@@ -35,10 +35,6 @@ const getDistance = (firstColor: Color, secondColor: Color) =>
 			Math.pow(secondColor.green() - firstColor.green(), 2) +
 			Math.pow(secondColor.blue() - firstColor.blue(), 2)
 	);
-const getPrimaryDifference = (firstColor: Color, secondColor: Color) => {
-	const primaryColor = firstColor.chroma;
-	const redDifference = getRedDifference(firstColor, secondColor);
-};
 
 // A Dictionary for the color characteristics and the functions to get the difference - also used for type definitions;
 const characteristics = {
@@ -59,10 +55,10 @@ const characteristics = {
 	distance: getDistance,
 };
 
-type Characteristic = keyof typeof characteristics;
+export type Characteristic = keyof typeof characteristics;
 
 // Returns a sort function for two colors based on an optional priority array of characteristics
-export default (
+const sortColorByPriority = (
 	priority: Array<Characteristic> = ["hue", "saturationl", "luminosity"]
 ) => (firstColor: Color, secondColor: Color) => {
 	if (priority.length === 0) {
@@ -87,3 +83,5 @@ export default (
 		secondColor
 	);
 };
+
+export default sortColorByPriority;

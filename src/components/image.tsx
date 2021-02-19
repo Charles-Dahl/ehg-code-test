@@ -1,35 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import Pixel from "./pixel";
 import Color from "color";
-import useSorting from "../hooks/use-sorting";
+
+import Pixel from "./pixel";
 import { pixelSize } from "../config";
 
-const ImageContainer = styled.div`
+const ImageGrid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(256, ${pixelSize});
 `;
 
-const Image = () => {
-	const values = [];
-	for (let redIndex = 32; redIndex > 0; redIndex--) {
-		for (let greenIndex = 32; greenIndex > 0; greenIndex--) {
-			for (let blueIndex = 32; blueIndex > 0; blueIndex--) {
-				values.push(
-					Color.rgb(redIndex * 8, greenIndex * 8, blueIndex * 8)
-				);
-			}
-		}
-	}
+interface ImageProps {
+	colors?: Array<Color>;
+}
 
-	const sortedValues = useSorting(values);
+const Image = ({ colors = [] }: ImageProps) => {
 	return (
-		<ImageContainer>
-			{sortedValues.map((value) => {
-				const colorString = value.string();
+		<ImageGrid>
+			{colors.map((color) => {
+				const colorString = color.string();
 				return <Pixel color={colorString} key={colorString} />;
 			})}
-		</ImageContainer>
+		</ImageGrid>
 	);
 };
 

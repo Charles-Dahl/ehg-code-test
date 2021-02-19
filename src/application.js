@@ -1,10 +1,10 @@
 import React from 'react';
-import Image from './components/image';
+import ImageContainer from './components/image-container';
 import Layout from './components/layout';
 
 const Application = () => {
     return <Layout>
-        <Image />
+        <ImageContainer />
     </Layout>
 }
 
