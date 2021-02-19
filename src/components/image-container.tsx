@@ -52,6 +52,10 @@ const ImageContainer = () => {
 				Use the controls to sort the colours by different
 				characteristics
 			</p>
+			<p>
+				Sorting is applied to the whole image first, then each row, and
+				finally each column
+			</p>
 			<SortControls
 				title="Sort all colors"
 				sortPriority={sortFull}
