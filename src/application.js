@@ -1,8 +1,11 @@
 import React from 'react';
-import Pixel from './components/pixel'
+import ImageContainer from './components/image-container';
+import Layout from './components/layout';
 
 const Application = () => {
-    return <Pixel redValue={256} greenValue={64} blueValue={128} />
+    return <Layout>
+        <ImageContainer />
+    </Layout>
 }
 
 export default Application;
