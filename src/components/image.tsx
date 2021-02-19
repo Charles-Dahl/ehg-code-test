@@ -4,10 +4,11 @@ import Color from "color";
 
 import Pixel from "./pixel";
 import { pixelSize } from "../config";
+import { chunk } from "lodash";
 
 const ImageGrid = styled.div`
 	display: grid;
-	grid-template-columns: repeat(256, ${pixelSize});
+	grid-template-columns: repeat(128, calc(${pixelSize} * 2));
 `;
 
 interface ImageProps {
@@ -15,11 +16,18 @@ interface ImageProps {
 }
 
 const Image = ({ colors = [] }: ImageProps) => {
+	const pairs = chunk(colors, 2);
 	return (
 		<ImageGrid>
-			{colors.map((color) => {
-				const colorString = color.string();
-				return <Pixel color={colorString} key={colorString} />;
+			{pairs.map((colorPair) => {
+				const colorString = `${colorPair[0].string()}${colorPair[1].string()}`;
+				return (
+					<Pixel
+						firstColor={colorPair[0].string()}
+						secondColor={colorPair[1].string()}
+						key={colorString}
+					/>
+				);
 			})}
 		</ImageGrid>
 	);
