@@ -1,1 +1,1 @@
-export const pixelSize = '1px';
+export const pixelSize = '3px';
