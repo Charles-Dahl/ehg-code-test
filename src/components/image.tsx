@@ -3,10 +3,11 @@ import styled from "styled-components";
 import Pixel from "./pixel";
 import Color from "color";
 import useSorting from "../hooks/use-sorting";
+import { pixelSize } from "../config";
 
 const ImageContainer = styled.div`
 	display: grid;
-	grid-template-columns: repeat(256, 5px);
+	grid-template-columns: repeat(256, ${pixelSize});
 `;
 
 const Image = () => {

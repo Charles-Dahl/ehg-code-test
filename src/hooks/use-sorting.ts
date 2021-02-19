@@ -3,7 +3,6 @@ import { flatten, chunk } from "lodash";
 import sortColorByPriority from "../library/sorting/sort-color-by-priority";
 
 // returns an array of colors sorted by the given priority
-// sorts by HSV by default
 
 const useSorting = (values: Array<Color>) => {
 	const sortedValues = values.sort(sortColorByPriority(["chroma"]));

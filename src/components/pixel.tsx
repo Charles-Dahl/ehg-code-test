@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { pixelSize } from "../config";
 
 interface PixelProps {
 	color: string;
@@ -9,16 +10,8 @@ const Pixel = styled.div.attrs<PixelProps>(({ color }) => ({
 		backgroundColor: color,
 	},
 }))<PixelProps>`
-	width: 5px;
-	height: 5px;
+	width: ${pixelSize};
+	height: ${pixelSize};
 `;
 
 export default Pixel;
-
-// const Component = styled.div.attrs(props => ({
-//     style: {
-//       background: props.background,
-//     },
-//   }))`width: 100%;`
-
-//   <Component />
