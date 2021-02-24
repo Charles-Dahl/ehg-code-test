@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ehg-code-test/static/css/main.184f52b8.chunk.css",
+    "main.js": "/ehg-code-test/static/js/main.fa07275e.chunk.js",
+    "main.js.map": "/ehg-code-test/static/js/main.fa07275e.chunk.js.map",
+    "runtime-main.js": "/ehg-code-test/static/js/runtime-main.b9b2f1d8.js",
+    "runtime-main.js.map": "/ehg-code-test/static/js/runtime-main.b9b2f1d8.js.map",
+    "static/js/2.220674b1.chunk.js": "/ehg-code-test/static/js/2.220674b1.chunk.js",
+    "static/js/2.220674b1.chunk.js.map": "/ehg-code-test/static/js/2.220674b1.chunk.js.map",
+    "static/js/3.69e9c278.chunk.js": "/ehg-code-test/static/js/3.69e9c278.chunk.js",
+    "static/js/3.69e9c278.chunk.js.map": "/ehg-code-test/static/js/3.69e9c278.chunk.js.map",
+    "index.html": "/ehg-code-test/index.html",
+    "static/css/main.184f52b8.chunk.css.map": "/ehg-code-test/static/css/main.184f52b8.chunk.css.map",
+    "static/js/2.220674b1.chunk.js.LICENSE.txt": "/ehg-code-test/static/js/2.220674b1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b9b2f1d8.js",
+    "static/js/2.220674b1.chunk.js",
+    "static/css/main.184f52b8.chunk.css",
+    "static/js/main.fa07275e.chunk.js"
+  ]
+}
